@@ -13,6 +13,7 @@ var findAllUsers = require('./middleware/findAllUsers');
 var welcome = require('./middleware/welcome');
 var findUser = require('./middleware/findUser');
 var findUsersChildren = require('./middleware/findUsersChildren');
+var findAllChildren = require('./middleware/findAllChildren');
 var findChildsForm = require('./middleware/findChildsForm');
 var sendChildsForm = require('./middleware/sendChildsForm');
 
@@ -41,6 +42,7 @@ apiRoutes.get('/', welcome);
 apiRoutes.get('/users', findAllUsers);
 apiRoutes.get('/users/:id',findUser);
 apiRoutes.get('/users/:id/children', findUsersChildren);
+apiRoutes.get('/children',findAllChildren);
 apiRoutes.get('/children/:childID/forms/:formName',findChildsForm);
 apiRoutes.post('/children/:childID/forms/:formName',sendChildsForm);
 
