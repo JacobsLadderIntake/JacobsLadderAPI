@@ -16,6 +16,7 @@ var findUsersChildren = require('./middleware/findUsersChildren');
 var findAllChildren = require('./middleware/findAllChildren');
 var findChildsForm = require('./middleware/findChildsForm');
 var sendChildsForm = require('./middleware/sendChildsForm');
+var addNewChild = require('./middleware/addNewChild');
 
 var port = process.env.PORT || 4200;
 
@@ -45,6 +46,7 @@ apiRoutes.get('/users/:id/children', findUsersChildren);
 apiRoutes.get('/children',findAllChildren);
 apiRoutes.get('/children/:childID/forms/:formName',findChildsForm);
 apiRoutes.post('/children/:childID/forms/:formName',sendChildsForm);
+apiRoutes.post('/children/',addNewChild);
 
 app.use('/api', apiRoutes);
 
