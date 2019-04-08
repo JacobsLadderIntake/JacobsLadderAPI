@@ -49,7 +49,7 @@ var userLoginCheck = function (req, res) {
 						res.json({"Error" : true, "Message" : "Error executing MySQL query"});
 					} else {
 						res.json({
-							success: true,
+							"Error": false,
 							message: 'Token generated',
 							token: token,
 							currUser: user_id
