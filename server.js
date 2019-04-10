@@ -17,6 +17,7 @@ var findAllChildren = require('./middleware/findAllChildren');
 var findChildsForm = require('./middleware/findChildsForm');
 var sendChildsForm = require('./middleware/sendChildsForm');
 var addNewChild = require('./middleware/addNewChild');
+var userSecurityQuestionCheck = require('./middleware/userSecurityQuestionCheck');
 
 var port = process.env.PORT || 4200;
 
@@ -30,6 +31,7 @@ app.listen(port, function() {
 
 app.post('/signup', addNewUser);
 app.post('/userlogin', userLoginCheck);
+app.post('/userSecurityQuestion',userSecurityQuestionCheck);
 
 
 
